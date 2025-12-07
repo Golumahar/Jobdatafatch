@@ -1,0 +1,31 @@
+name: Super Fast Update (10 Mins)
+
+on:
+  schedule:
+    # Ye Cron code hai: Har 10 minute par chalega
+    - cron: '*/10 * * * *'
+  
+  # Ye line button degi taaki aap kabhi bhi manually chala sako
+  workflow_dispatch:
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code Download karo
+        uses: actions/checkout@v3
+
+      - name: Python Setup karo
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Libraries Install karo
+        run: |
+          pip install -r requirements.txt
+
+      - name: Script Run karo
+        run: |
+          python main.py
+          
