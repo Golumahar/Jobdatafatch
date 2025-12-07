@@ -3,9 +3,12 @@ import requests
 import time
 import re
 import hashlib # Unique ID banane ke liye
+import os  # <-- Ye line zaroor jodna
 
 # --- 1. CONFIGURATION ---
-FIREBASE_DB_URL = "https://jobs-5e152-default-rtdb.asia-southeast1.firebasedatabase.app/"
+# Ab ye URL system ke secret se uthayega
+FIREBASE_DB_URL = os.environ.get("FIREBASE_URL") 
+
 
 # --- 2. MASTER RSS SOURCES ---
 RSS_SOURCES = [
