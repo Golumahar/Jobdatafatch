@@ -7,7 +7,7 @@ import os  # <-- Ye line zaroor jodna
 
 # --- 1. CONFIGURATION ---
 # Ab ye URL system ke secret se uthayega
-FIREBASE_DB_URL = os.environ.get("FIREBASE_URL") 
+FIREBASE_DB_URL = os.environ.get("FIREBASE_") 
 
 
 # --- 2. MASTER RSS SOURCES ---
